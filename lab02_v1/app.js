@@ -38,9 +38,10 @@ app.get('/register', (req, res) => { res.render('register');
 });
 
 //route for catalogue 
-app.get('/catalogue',(req,res)=> {res.render('catalogue');
-});
+//app.get('/api/catalog',(req,res)=> {res.render('catalogue');
+//});
 
+//app.get('/api/article', (req, res) => { res.render('article');
 
 // using JSON and URL Encoded middleware
 app.use(express.json());
