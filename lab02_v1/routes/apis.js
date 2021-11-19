@@ -2,6 +2,7 @@ const express = require('express');
 const productController = require('../controllers/productController');
 const catalogServices = require('../services/productServices');
 const clientController = require('../controllers/clientController');
+const { response } = require('express');
 
 //define a router and create routes
 const router = express.Router();
@@ -20,7 +21,6 @@ router.get('/api/article/:id', (request, response) => {
 
 //routes for dynamic processing of clients 
 //route for registration
-router.get('/api')
 router.post('/api/register', clientController.registerControl); 
 //route for login
 router.post('/api/login', clientController.loginControl);
