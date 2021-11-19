@@ -73,9 +73,9 @@ function createClient(client, callback) {
 module.exports = {
     find,
     findByUsername,
-    findBySociety,
-    findByNumclient,
+    //findBySociety,
+    //findByNumclient,
     createClient,
-    deleteClient,
-    createInitialAccounts
+    //deleteClient,
+    //createInitialAccounts
 };
