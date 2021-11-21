@@ -40,13 +40,13 @@ const registerControl = (request, response) => {
     let password = request.body.passwsord;
     let society = request.body.society;
     let contact = request.body.contact;
-    let address = request.body.address;
+    let addres = request.body.address;
     let zipcode = request.body.zipcode;
     let city = request.body.city;
     let phone = request.body.phone;
     let fax = request.body.fax;
     let max_outstanding = request.body.max_outstanding;
-    let client = new Client(username, password, 0, society, contact, address, zipcode, city, phone, fax, max_outstanding);
+    let client = new Client(username, password, 0, society, contact, addres, zipcode, city, phone, fax, max_outstanding);
 
     clientServices.registerService(client, function(err, exists, insertedID) {
         console.log("User from register service :" + insertedID);

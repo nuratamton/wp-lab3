@@ -48,12 +48,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
-    secret: 'keyboard cat',
+    secret: 'keyboard goldfish',
     resave: true,
     saveUninitialized: true
 }));
 
-
+//pass requests to the router middleware
+const router = require('./routes/apis'); 
+app.use(router);
 
 //make the app listen on port
 const port = process.argv[2] || process.env.PORT || 3000;
@@ -61,6 +63,3 @@ const server = app.listen(port,()=> {
     console.log('Cart app listening at http://localhost:${port}');
 })
 
-//pass requests to the router middleware
-const router = require('./routes/apis'); 
-app.use(router);
