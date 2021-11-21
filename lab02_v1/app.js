@@ -1,5 +1,5 @@
 const express = require ('express');
-
+const session = require("express-session");
 
 //creating app
 const app = express();
@@ -46,6 +46,14 @@ app.get('/register', (req, res) => { res.render('register');
 // using JSON and URL Encoded middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true
+}));
+
+
 
 //make the app listen on port
 const port = process.argv[2] || process.env.PORT || 3000;
