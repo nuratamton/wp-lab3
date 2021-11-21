@@ -24,8 +24,7 @@ const loginControl = (request, response) => {
                     request.session.user = username;
                     request.session.num_client = client[0].num_client;
                     request.session.admin = false;
-                    response.send(`Login (${username}, ID.${client[0].num_client}) successful!`);
-                    response.end();
+                    response.render('postLogin', { username: username });
                 }
             });
         }
@@ -37,10 +36,10 @@ const registerControl = (request, response) => {
     const clientServices = require('../services/clientServices');
 
     let username = request.body.username;
-    let password = request.body.passwsord;
+    let password = request.body.password;
     let society = request.body.society;
     let contact = request.body.contact;
-    let addres = request.body.address;
+    let addres = request.body.addres;
     let zipcode = request.body.zipcode;
     let city = request.body.city;
     let phone = request.body.phone;
@@ -56,7 +55,8 @@ const registerControl = (request, response) => {
         } else {
             client.num_client = insertedID;
             console.log(`Registration (${username}, ${insertedID}) successful!`);
-            response.send(`Successful registration ${client.contact} (ID.${client.num_client})!`);
+            response.render('postRegister', { message: `Successful registration ${username}!` });
+            //response.send(`Successful registration ${client.contact} (ID.${client.num_client})!`);
         }
         response.end();
     });

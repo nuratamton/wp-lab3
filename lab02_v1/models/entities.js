@@ -5,7 +5,7 @@ class Client {
         this.num_client = num_client;
         this.society = society;
         this.contact = contact;
-        this.address = addres;
+        this.addres = addres;
         this.zipcode = zipcode;
         this.city = city;
         this.phone = phone;
