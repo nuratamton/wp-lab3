@@ -1,7 +1,6 @@
 const { Client } = require("../models/entities");
 const loginControl = (request, response) => {
   const clientServices = require("../services/clientServices");
-
   let username = request.body.username;
   let password = request.body.password;
   if (!username || !password) {
@@ -36,7 +35,6 @@ const loginControl = (request, response) => {
 
 const registerControl = (request, response) => {
   const clientServices = require("../services/clientServices");
-
   let username = request.body.username;
   let password = request.body.password;
   let society = request.body.society;
@@ -80,15 +78,6 @@ const registerControl = (request, response) => {
   });
 };
 
-/*
-const getClients = (request, response) => {
-  const clientServices = require("../services/clientServices");
-  clientServices.searchService(function (err, rows) {
-    response.json(rows);
-    response.end();
-  });
-};
-*/
 const getClient = (request, response) => {
   const clientServices = require("../services/clientServices");
   let username = request.session.user;

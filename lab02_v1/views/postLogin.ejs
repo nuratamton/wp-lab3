@@ -1,14 +1,12 @@
 <%- include('header'); -%>
 
-    <div class='content'>
-        <h2>
-            <a href="/api/login/<%= username %>">
-                <%= username %>
-            </a>
-        </h2>
-        <h3>Would you like to browse the <a href="/api/catalog">catalog</a>?</h3>
-        <h3>Or would you like to view <a href = "/api/clients">clients</a>?</h3>
-        <br>
-    </div>
+<div class="content">
+  <h2>
+    <a href="/api/login/<%= username %>"> <%= username %> </a>
+  </h2>
+  <h3>Would you like to browse the <a href="/api/catalog">catalog</a>?</h3>
+  <h3>Or would you like to view <a href="/api/clients">clients</a>?</h3>
+  <br />
+</div>
 
 <%- include('footer'); -%>
