@@ -24,6 +24,10 @@ router.get('/api/article/:id', (request, response) => {
 router.post('/api/register', clientController.registerControl); 
 //route for login
 router.post('/api/login', clientController.loginControl);
+//route for client
+router.get('/api/login/:username', clientController.getClient);
+
+router.get('/api/clients', clientController.getClient);
 
 
 
